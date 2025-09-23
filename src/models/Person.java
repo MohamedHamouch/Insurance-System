@@ -2,25 +2,27 @@ package models;
 
 
 public abstract class Person {
-    private String lastName;
+    private int id;
     private String firstName;
+    private String lastName;
     private String email;
 
     public Person() {
     }
 
-    public Person(String lastName, String firstName, String email) {
-        this.lastName = lastName;
+    public Person(int id, String firstName, String lastName, String email) {
+        this.id = id;
         this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
     }
 
-    public String getLastName() {
-        return lastName;
+    public int getId() {
+        return this.id;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -29,6 +31,14 @@ public abstract class Person {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {
