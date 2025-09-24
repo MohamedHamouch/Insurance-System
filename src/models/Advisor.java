@@ -5,7 +5,7 @@ public class Advisor extends Person {
         super();
     }
 
-    public Advisor(int id, String firstName, String lastName, String email) {
+    public Advisor(Long id, String firstName, String lastName, String email) {
         super(id, firstName, lastName, email);
     }
 }

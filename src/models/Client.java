@@ -7,7 +7,7 @@ public class Client extends Person {
         super();
     }
 
-    public Client(int id, String firstName, String lastName, String email, Advisor advisor) {
+    public Client(Long id, String firstName, String lastName, String email, Advisor advisor) {
         super(id, firstName, lastName, email);
         this.advisor = advisor;
     }
