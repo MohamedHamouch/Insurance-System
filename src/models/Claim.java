@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 public class Claim {
-    private Long id;
+    private Integer id;
     private ClaimType claimType;
     private LocalDateTime dateTime;
     private BigDecimal cost;
@@ -14,7 +14,7 @@ public class Claim {
 
     public Claim() {}
 
-    public Claim(Long id, ClaimType claimType, LocalDateTime dateTime, BigDecimal cost, String description, Contract contract) {
+    public Claim(Integer id, ClaimType claimType, LocalDateTime dateTime, BigDecimal cost, String description, Contract contract) {
         this.id = id;
         this.claimType = claimType;
         this.dateTime = dateTime;
@@ -23,8 +23,8 @@ public class Claim {
         this.contract = contract;
     }
 
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
 
     public ClaimType getClaimType() { return claimType; }
     public void setClaimType(ClaimType claimType) { this.claimType = claimType; }

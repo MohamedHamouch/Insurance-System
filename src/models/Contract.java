@@ -5,7 +5,7 @@ import enums.ContractType;
 import java.time.LocalDate;
 
 public class Contract {
-    private Long id;
+    private Integer id;
     private ContractType contractType;
     private LocalDate startDate;
     private LocalDate endDate;
@@ -14,7 +14,7 @@ public class Contract {
     public Contract() {
     }
 
-    public Contract(Long id, ContractType contractType, LocalDate startDate, LocalDate endDate, Client client) {
+    public Contract(Integer id, ContractType contractType, LocalDate startDate, LocalDate endDate, Client client) {
         this.id = id;
         this.contractType = contractType;
         this.startDate = startDate;
@@ -22,11 +22,11 @@ public class Contract {
         this.client = client;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

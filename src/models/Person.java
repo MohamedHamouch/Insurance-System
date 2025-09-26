@@ -2,7 +2,7 @@ package models;
 
 
 public abstract class Person {
-    private Long id;
+    private Integer id;
     private String firstName;
     private String lastName;
     private String email;
@@ -10,18 +10,18 @@ public abstract class Person {
     public Person() {
     }
 
-    public Person(Long id, String firstName, String lastName, String email) {
+    public Person(Integer id, String firstName, String lastName, String email) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return this.id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
