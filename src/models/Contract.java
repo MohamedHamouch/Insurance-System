@@ -22,6 +22,15 @@ public class Contract {
         this.client = client;
     }
 
+    @Override
+    public String toString() {
+        return "ID: " + id +
+                ", Type: " + contractType +
+                ", Start: " + startDate +
+                ", End: " + endDate +
+                ", Client: " + client.getFirstName() + " " + client.getLastName();
+    }
+
     public Integer getId() {
         return id;
     }

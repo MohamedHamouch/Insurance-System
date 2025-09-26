@@ -22,6 +22,15 @@ public class Claim {
         this.description = description;
         this.contract = contract;
     }
+    @Override
+    public String toString() {
+        return "ID: " + id +
+                ", Type: " + claimType +
+                ", Date: " + dateTime.toLocalDate() +
+                ", Cost: " + cost +
+                ", Description: " + description +
+                ", Contract ID: " + contract.getId();
+    }
 
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }

@@ -16,6 +16,12 @@ public abstract class Person {
         this.lastName = lastName;
         this.email = email;
     }
+    @Override
+    public String toString() {
+        return "ID: " + id +
+                ", Name: " + firstName + " " + lastName +
+                ", Email: " + email;
+    }
 
     public Integer getId() {
         return this.id;

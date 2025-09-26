@@ -1,5 +1,9 @@
 package helpers;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Scanner;
 
 public class InputHelper {
@@ -64,5 +68,48 @@ public class InputHelper {
         return choice;
     }
 
+    public static String getEmail(String message) {
+        String input;
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+        while (true) {
+            System.out.print(message);
+            input = sc.nextLine().trim();
+            if (!input.isEmpty() && input.matches(emailRegex)) {
+                return input;
+            }
+            System.out.println("Invalid email format. Please enter a valid email address.");
+        }
+    }
 
+    public static LocalDateTime getDateTimeInput(String message) {
+        LocalDateTime dateTime;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+        while (true) {
+            System.out.print(message + " (yyyy-MM-dd HH:mm:ss): ");
+            try {
+                String input = sc.nextLine().trim();
+                dateTime = LocalDateTime.parse(input, formatter);
+                break;
+            } catch (DateTimeParseException e) {
+                System.out.println("Invalid date/time format. Please use yyyy-MM-dd HH:mm:ss");
+            }
+        }
+        return dateTime;
+    }
+    public static String getDateInput(String message) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+        while (true) {
+            System.out.print(message + " (yyyy-MM-dd): ");
+            try {
+                String input = sc.nextLine().trim();
+                // Validate the format by parsing it, but return the string
+                LocalDate.parse(input, formatter);
+                return input; // Return the validated string
+            } catch (DateTimeParseException e) {
+                System.out.println("Invalid date format. Please use yyyy-MM-dd");
+            }
+        }
+    }
 }
